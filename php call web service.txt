@@ -1,0 +1,53 @@
+
+@@testportShahkar='0'+	substr(@@PhoneMaster,0,10)	; 	
+$Addresss=sprintf('%sESB/api/Esb/Webservicetest', @@ipaddresssetting);
+//$ch1 = curl_init($Addresss);
+$ch1 = curl_init("http://192.168.22.362/ESB/api/Esb/Webservicetest");
+$postData = array(
+    'username' => 'admin',
+    'password' => '123457',
+     'classifier_Enquiry'=>array(
+		 
+		    'serviceNumber'=>@@testportShahkar,
+            'serviceType'=>3
+           		 	
+		      
+    ));
+$json1=json_encode($postData);
+
+curl_setopt_array($ch1, array(
+    CURLOPT_POST => TRUE,
+    CURLOPT_RETURNTRANSFER => TRUE,
+    CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json'
+        ),
+    CURLOPT_POSTFIELDS => $json1
+    ));
+
+// Send the request
+$response1 = curl_exec($ch1);
+
+// Check for errors
+if($response1 === FALSE){
+    die(curl_error($ch1));
+}
+
+// Decode the response
+
+$responseData1 = json_decode($response1, true);
+if($responseData1['response']=='200' )
+	{
+
+@@shahkarid=$responseData1['classifier'];
+
+	
+	}
+else if( $responseData1['response']=='316' || $responseData1['response']=='317')
+{
+@@IsValidShahkarDelete=1;
+}
+	else 
+	
+	{
+	@@shahkarid='0';
+	}
