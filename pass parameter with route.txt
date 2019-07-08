@@ -1,0 +1,3 @@
+ #RewriteRule  ^tst/$ view/tst.php?val=sss    [L,QSA]
+ #RewriteRule  ^tst/([^/\.]+)/([^/\.]+)?/ view/tst.php?p=$1 [L,QSA]    //ok with two parameter
+ #RewriteRule  ^tst/(.*)$ view/tst.php?q=$1 [QSA]           //ok with one prameter
