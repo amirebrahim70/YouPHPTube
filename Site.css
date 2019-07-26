@@ -1,0 +1,116 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    float:right;
+    direction:rtl;
+ 
+}
+
+/*.navbar-collapse{
+    float:right;
+}*/
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family:yekan;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+@font-face {
+    font-family: 'yekan';
+    src: url('../fonts/BYekan.eot');
+    src: local('BYekan'), url('../fonts/BYekan.woff') format('woff'), url('../fonts/BYekan.ttf') format('truetype'), url('../fonts/BYekan.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.navbar-inverse {
+    background-color: #0099cc;
+    border-color: #080808;
+}
+*{
+    
+    font:bold 15px 'yekan';
+}
+.navbar-brand {
+  float:right;
+  direction:rtl;
+}
+.navbar-nav > li > a {
+    padding-right:100pxl
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+/*.aligncontent{
+    float:right;
+}*/
+
+.table th {
+    text-align: center;
+    background-color: Highlight !important;
+    color: white;
+    font-family: 'B Titr';
+}
+
+.table {
+    border-collapse: collapse !important;
+    float: right;
+    direction: rtl;
+    text-align: center;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #ddd !important;
+}
+
+tr:nth-child(even) {
+    background-color: #cccccc;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: #ffd800;
+}
+
+#divMenu {
+    white-space: nowrap;
+}
+
+.nav > li > a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        text-decoration: none;
+        background-color: #c9f580;
+    }
+
+a:hover, a:focus {
+    color: #0f1011;
+}
+.boxstyle{
+    background-color:gray;
+}
+#totalBed,#totalBes{
+    color:green;
+}
