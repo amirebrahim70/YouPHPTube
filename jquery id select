@@ -1,0 +1,1 @@
+ $("[id*=tab_content]").removeClass("active");
