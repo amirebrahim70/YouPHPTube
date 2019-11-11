@@ -1,0 +1,1 @@
+https://makitweb.com/display-loading-image-when-ajax-call-is-in-progress/
