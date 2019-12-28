@@ -1,0 +1,28 @@
+@model PagedList.IPagedList<Account.Models.ContentProvider.ContentProviderViewModel>
+@using PagedList.Mvc;
+
+<a href="@Url.Action("Index",new { sortitem="CpId",NameSearch=ViewBag.NameSearch,AgregatorNameSearch=ViewBag.ServiceAgregatorNameSearch})">@Html.DisplayNameFor(model => model.FirstOrDefault().CpId)</a>
+		 
+<div class="direction text-center">
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortitem = ViewBag.sortitem,NameSearch=ViewBag.NameSearch,AgregatorNameSearch=ViewBag.ServiceAgregatorNameSearch }))
+</div>
+		
+		
+		
+public ActionResult Index(int? page, string sortitem, string message, string status,string NameSearch,string AgregatorNameSearch,string menuSelect,string subMenuSelect)
+	
+	
+	
+	int pageSize = 10;
+				int pageNumber = (page ?? 1);
+				ViewBag.message = message;
+				ViewBag.status = status;
+				ViewBag.NameSearch = NameSearch;
+				ViewBag.sortitem = sortitem;
+				ViewBag.ServiceAgregatorNameSearch = AgregatorNameSearch;
+				ViewBag.page = page;
+                ViewBag.menuSelect = menuSelect;
+                ViewBag.subMenuSelect = subMenuSelect;
+				return View(lst.ToPagedList(pageNumber, pageSize));
+		
