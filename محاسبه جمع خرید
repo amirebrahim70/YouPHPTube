@@ -1,0 +1,4 @@
+select faktors.CustomerId,Customers.FullName,Count(faktors.Id) as Sale_Count,sum(FaktorDetails.Price) as total from faktors
+left join Customers on faktors.CustomerId = Customers.CustomerId
+left join FaktorDetails on faktors.Id = FaktorDetails.FaktorId
+group by faktors.CustomerId,Customers.FullName
